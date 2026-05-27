@@ -4,7 +4,9 @@ from square import Shape
 
 class Hexagon(Shape):
     def __init__(self, side):
-        super().__init__(self)
+        super().__init__()
+
+        self._validate_number(side, "side")
         self.side = side
 
     def get_area(self):
@@ -15,6 +17,9 @@ class Hexagon(Shape):
     
     def __str__(self):
         return f"Type shape: Hexagon\nArea: {self.get_area()}\nPerimeter: {self.get_perimeter()}\n"
+    
+    def __repr__(self):
+        return f"Hexagon(side = {self.side})"
     
 
 # --- Main ---

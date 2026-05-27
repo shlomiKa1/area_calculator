@@ -3,7 +3,9 @@ from calculator import Shape
 
 class Square(Shape):
     def __init__(self, side):
-        super().__init__(self)
+        super().__init__()
+        
+        self._validate_number(side, "side")
         self.side = side
 
     def get_area(self):
@@ -14,6 +16,9 @@ class Square(Shape):
     
     def __str__(self):
         return f"Type shape: Square\nArea: {self.get_area()}\nPerimeter: {self.get_perimeter()}\n"
+    
+    def __repr__(self):
+        return f"Square(side = {self.side})"
     
 
 # --- Main ---

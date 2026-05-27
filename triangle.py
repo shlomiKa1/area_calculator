@@ -4,6 +4,11 @@ from rectangle import Rectangle
 class Triangle(Rectangle):
     def __init__(self, base, height, side_a, side_b, side_c):
         super().__init__(base, height)
+        
+        self._validate_number(side_a, "side_a")
+        self._validate_number(side_b, "side_b")
+        self._validate_number(side_c, "side_c")
+
         self.side_a = side_a
         self.side_b = side_b
         self.side_c = side_c
@@ -16,6 +21,9 @@ class Triangle(Rectangle):
     
     def __str__(self):
         return f"Type shape: Triangle\nArea: {self.get_area()}\nPerimeter: {self.get_perimeter()}\n"
+    
+    def __repr__(self):
+        return f"Triangle(base = {self.width}, height = {self.height}, side_a = {self.side_a}, side_b = {self.side_b}, side_c = {self.side_c})"
     
 
 # --- Main ---
