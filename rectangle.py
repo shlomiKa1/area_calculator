@@ -1,0 +1,26 @@
+from calculator import Shape
+
+
+class Rectangle(Shape):
+    def __init__(self, width, height):
+        super().__init__(self)
+        self.width = width
+        self.height = height
+
+    def get_area(self):
+        return self.width * self.height
+    
+    def get_perimeter(self):
+        return 2 * (self.width + self.height)
+
+    def __str__(self):
+        return f"Type shape: Rctangle\nArea: {self.get_area()}\nPerimeter: {self.get_perimeter()}\n"
+    
+
+# --- Main ---
+if __name__ == "__main__":
+    r1 = Rectangle(2, 3)
+    r2 = Rectangle(2, 5)
+
+    print(r1)
+    print(r2)
